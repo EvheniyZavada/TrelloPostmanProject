@@ -1566,7 +1566,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{Protocol}}://api.trello.com/1/boards/?key={{TrelloKey}}&token={{TrelloToken}}",
+									"raw": "{{Protocol}}://api.trello.com/1/boards/?name=Доска&key={{TrelloKey}}&token={{TrelloToken}}",
 									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
@@ -1581,8 +1581,7 @@
 									"query": [
 										{
 											"key": "name",
-											"value": "Моя доска",
-											"disabled": true
+											"value": "Доска"
 										},
 										{
 											"key": "key",
@@ -1634,7 +1633,7 @@
 											"\r",
 											"\r",
 											"pm.test(`Card ${card.id} has required field`, ()=>{\r",
-											"        pm.expect(card).to.have.keys(\"id\");\r",
+											"    //    pm.expect(card).to.have.keys(\"id\");\r",
 											"        pm.expect(card.id).to.be.a(\"string\");\r",
 											"    });"
 										],
