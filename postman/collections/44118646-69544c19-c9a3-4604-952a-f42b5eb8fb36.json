@@ -1776,7 +1776,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"их доска\",\r\n    \"desc\" : \"new one\",\r\n    \"closed\" : false\r\n}",
+									"raw": "{\r\n    \"name\" : \"Их доска\",\r\n    \"desc\" : \"Описание\",\r\n    \"closed\" : false\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
