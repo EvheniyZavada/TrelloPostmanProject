@@ -789,6 +789,21 @@
 						},
 						{
 							"name": "Get Cards",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c4b06226-8e04-46dc-8f46-7d4394aaab0d",
+										"exec": [
+											"pm.test(\"Проверка статус кода 200\", ()=>{\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "44118646-ef070ebd-00e7-4027-917a-5e8b642d41a8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
