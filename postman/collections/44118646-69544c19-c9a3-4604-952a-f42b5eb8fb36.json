@@ -1,0 +1,1256 @@
+{
+	"info": {
+		"_postman_id": "44118646-69544c19-c9a3-4604-952a-f42b5eb8fb36",
+		"name": "Trello Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "Boards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [
+								{
+									"name": "401 wrong token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5481ecbf-e289-4ca1-ae65-0446d9d4ab4a",
+												"exec": [
+													"pm.test(\"проверка кода 401\", function(){\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Invalid app token\", ()=>{\r",
+													"    pm.response.to.have.body(\"invalid app token\")\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "44118646-b6c04949-ffe9-47ad-9785-543f1f80e7d9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&token={{TrelloToken}}m&fields=id,name",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"members",
+												"{{UserName}}",
+												"boards"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}m"
+												},
+												{
+													"key": "fields",
+													"value": "id,name"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "400 no token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "cfbf152b-1c24-4939-b901-7c3a6ebc0e4b",
+												"exec": [
+													"pm.test(\"проверка кода 400\", function(){\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: invalid token\", function(){\r",
+													"    pm.response.to.have.body(\"invalid token\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "44118646-f6263c1f-89d3-4fd2-81d9-6b66bc6f93b6",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&fields=id,name",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"members",
+												"{{UserName}}",
+												"boards"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}",
+													"disabled": true
+												},
+												{
+													"key": "fields",
+													"value": "id,name"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "404 members>memers",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "23a5b41f-51a6-4d5a-bbbf-38cb485405cb",
+												"exec": [
+													"pm.test(\"проверка кода 404\", function(){\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Cannot GET /1/memers..\", ()=>{\r",
+													"    pm.response.to.have.body(\"Cannot GET /1/memers/zavada1997@gmail.com/boards?key=4d9dd97638a81eaec3d5a7f125b6b562&token=ATTAac7d6572f06502abadc634407cef8927be972cf00c41777a053365e7ffcb6101C7527E9B&fields=id,name\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "44118646-37e90be0-5c85-44d1-8a7d-c2a31ac02b37",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&token={{TrelloToken}}&fields=id,name",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"members",
+												"{{UserName}}",
+												"boards"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												},
+												{
+													"key": "fields",
+													"value": "id,name"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "44118646-0495d4bc-5ef5-4f0d-9217-31d49107885a"
+						},
+						{
+							"name": "Get All Boards",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "354c7be3-9b3f-46af-825e-938430796016",
+										"exec": [
+											"\r",
+											"pm.test(\"Проверка статус кода 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Заголовок Content-Type равен значению application/json; charset=utf-8\", function(){\r",
+											"    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");\r",
+											"});\r",
+											"\r",
+											"//проверка структуры данных\r",
+											"var boards = pm.response.json();\r",
+											"pm.test(\"Проверка структуры\",() => pm.expect(boards).to.be.an(\"array\"));\r",
+											"\r",
+											"if(boards.length > 0){\r",
+											"    pm.environment.set(\"newBoardId\", boards[0].id);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Error, array is empty\");\r",
+											"}\r",
+											"\r",
+											"boards.forEach(board => {\r",
+											"    pm.test(`Board ${board.id} has required field`, ()=>{\r",
+											"        pm.expect(board).to.have.keys(\"id\",\"name\");\r",
+											"        pm.expect(board.id).to.be.a(\"string\");\r",
+											"        pm.expect(board.name).to.be.a(\"string\");\r",
+											"    })\r",
+											"})\r",
+											"\r",
+											"//проверка времени ответа\r",
+											"pm.test(\"response time is less 500ms\", ()=>{\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"})\r",
+											"\r",
+											"\r",
+											"var currentTime = pm.response.responseTime;\r",
+											"var previousTime = pm.environment.get(\"prevResponseTime\");\r",
+											"\r",
+											"pm.environment.set(\"prevResponseTime\", currentTime);\r",
+											"if(previousTime){\r",
+											"    pm.test(\"responseTime improved\", function(){\r",
+											"        pm.expect(currentTime).to.be.lessThan(previousTime);\r",
+											"    })\r",
+											"}\r",
+											"\r",
+											"let jsonSchema = JSON.parse(pm.environment.get(\"schema\"));\r",
+											"pm.test(\"json schema is valid\", function(){\r",
+											"    pm.expect(pm.response.json()).to.have.jsonSchema(jsonSchema);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "a9961adf-5cda-4f36-b807-2b5028dbc034",
+										"exec": [
+											"let jsonSchema = {\r",
+											"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+											"  \"title\": \"Generated schema for Root\",\r",
+											"  \"type\": \"array\",\r",
+											"  \"items\": {\r",
+											"    \"type\": \"object\",\r",
+											"    \"properties\": {\r",
+											"      \"id\": {\r",
+											"        \"type\": \"string\"\r",
+											"      },\r",
+											"      \"name\": {\r",
+											"        \"type\": \"string\"\r",
+											"      }\r",
+											"    },\r",
+											"    \"required\": [\r",
+											"      \"id\",\r",
+											"      \"name\"\r",
+											"    ]\r",
+											"  }\r",
+											"};\r",
+											"\r",
+											"pm.environment.set(\"schema\", JSON.stringify(jsonSchema));"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "44118646-8601df3b-48aa-4776-a120-f29fa17a353e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&token={{TrelloToken}}&fields=id,name",
+									"protocol": "{{Protocol}}",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"members",
+										"{{UserName}}",
+										"boards"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										},
+										{
+											"key": "fields",
+											"value": "id,name"
+										},
+										{
+											"key": "",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get A Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "25f66922-1225-4a3f-bf65-4c806a64dae7",
+										"exec": [
+											"pm.test(\"Get code 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var board = pm.response.json();\r",
+											"pm.test(\"Проверка структуры\",() => pm.expect(board).to.be.an(\"object\"));\r",
+											"\r",
+											"pm.test(\"response time is below 500\", ()=>{\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"let currentTime = pm.response.responseTime;\r",
+											"let previousResponseTime = pm.environment.get(\"previousResponseTime\");\r",
+											"\r",
+											"pm.environment.set(\"previousResponseTime\", currentTime);\r",
+											"if(previousResponseTime){\r",
+											"    pm.test(\"responseTime improved\", function(){\r",
+											"        pm.expect(currentTime).to.be.lessThan(previousResponseTime);\r",
+											"    })\r",
+											"}\r",
+											"\r",
+											"\r",
+											"let jsonSchema = JSON.parse(pm.environment.get(\"schema\"));\r",
+											"pm.test(\"json schema is valid\", function(){\r",
+											"    pm.expect(pm.response.json()).to.have.jsonSchema(jsonSchema);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "77fa24bc-c5a6-46d2-9657-79a0dba8464e",
+										"exec": [
+											"let jsonSchema =\r",
+											"{\r",
+											"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"id\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"name\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"desc\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"descData\": {},\r",
+											"    \"closed\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"idOrganization\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"idEnterprise\": {},\r",
+											"    \"pinned\": {\r",
+											"      \"type\": \"boolean\"\r",
+											"    },\r",
+											"    \"url\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"shortUrl\": {\r",
+											"      \"type\": \"string\"\r",
+											"    },\r",
+											"    \"prefs\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"permissionLevel\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"hideVotes\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"voting\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"comments\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"invitations\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"selfJoin\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"cardCovers\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"showCompleteStatus\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"cardCounts\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"isTemplate\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"cardAging\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"calendarFeedEnabled\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"hiddenPluginBoardButtons\": {\r",
+											"          \"type\": \"array\",\r",
+											"          \"items\": {}\r",
+											"        },\r",
+											"        \"switcherViews\": {\r",
+											"          \"type\": \"array\",\r",
+											"          \"items\": {\r",
+											"            \"type\": \"object\",\r",
+											"            \"properties\": {\r",
+											"              \"viewType\": {\r",
+											"                \"type\": \"string\"\r",
+											"              },\r",
+											"              \"enabled\": {\r",
+											"                \"type\": \"boolean\"\r",
+											"              }\r",
+											"            },\r",
+											"            \"required\": [\r",
+											"              \"viewType\",\r",
+											"              \"enabled\"\r",
+											"            ]\r",
+											"          }\r",
+											"        },\r",
+											"        \"autoArchive\": {},\r",
+											"        \"background\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"backgroundColor\": {},\r",
+											"        \"backgroundDarkColor\": {},\r",
+											"        \"backgroundImage\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"backgroundDarkImage\": {},\r",
+											"        \"backgroundImageScaled\": {\r",
+											"          \"type\": \"array\",\r",
+											"          \"items\": {\r",
+											"            \"type\": \"object\",\r",
+											"            \"properties\": {\r",
+											"              \"width\": {\r",
+											"                \"type\": \"number\"\r",
+											"              },\r",
+											"              \"height\": {\r",
+											"                \"type\": \"number\"\r",
+											"              },\r",
+											"              \"url\": {\r",
+											"                \"type\": \"string\"\r",
+											"              }\r",
+											"            },\r",
+											"            \"required\": [\r",
+											"              \"width\",\r",
+											"              \"height\",\r",
+											"              \"url\"\r",
+											"            ]\r",
+											"          }\r",
+											"        },\r",
+											"        \"backgroundTile\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"backgroundBrightness\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"sharedSourceUrl\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"backgroundBottomColor\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"backgroundTopColor\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"canBePublic\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"canBeEnterprise\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"canBeOrg\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"canBePrivate\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        },\r",
+											"        \"canInvite\": {\r",
+											"          \"type\": \"boolean\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"permissionLevel\",\r",
+											"        \"hideVotes\",\r",
+											"        \"voting\",\r",
+											"        \"comments\",\r",
+											"        \"invitations\",\r",
+											"        \"selfJoin\",\r",
+											"        \"cardCovers\",\r",
+											"        \"showCompleteStatus\",\r",
+											"        \"cardCounts\",\r",
+											"        \"isTemplate\",\r",
+											"        \"cardAging\",\r",
+											"        \"calendarFeedEnabled\",\r",
+											"        \"hiddenPluginBoardButtons\",\r",
+											"        \"switcherViews\",\r",
+											"        \"autoArchive\",\r",
+											"        \"background\",\r",
+											"        \"backgroundColor\",\r",
+											"        \"backgroundDarkColor\",\r",
+											"        \"backgroundImage\",\r",
+											"        \"backgroundDarkImage\",\r",
+											"        \"backgroundImageScaled\",\r",
+											"        \"backgroundTile\",\r",
+											"        \"backgroundBrightness\",\r",
+											"        \"sharedSourceUrl\",\r",
+											"        \"backgroundBottomColor\",\r",
+											"        \"backgroundTopColor\",\r",
+											"        \"canBePublic\",\r",
+											"        \"canBeEnterprise\",\r",
+											"        \"canBeOrg\",\r",
+											"        \"canBePrivate\",\r",
+											"        \"canInvite\"\r",
+											"      ]\r",
+											"    },\r",
+											"    \"labelNames\": {\r",
+											"      \"type\": \"object\",\r",
+											"      \"properties\": {\r",
+											"        \"green\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"yellow\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"orange\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"red\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"purple\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"blue\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"sky\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"lime\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"pink\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"black\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"green_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"yellow_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"orange_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"red_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"purple_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"blue_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"sky_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"lime_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"pink_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"black_dark\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"green_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"yellow_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"orange_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"red_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"purple_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"blue_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"sky_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"lime_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"pink_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        },\r",
+											"        \"black_light\": {\r",
+											"          \"type\": \"string\"\r",
+											"        }\r",
+											"      },\r",
+											"      \"required\": [\r",
+											"        \"green\",\r",
+											"        \"yellow\",\r",
+											"        \"orange\",\r",
+											"        \"red\",\r",
+											"        \"purple\",\r",
+											"        \"blue\",\r",
+											"        \"sky\",\r",
+											"        \"lime\",\r",
+											"        \"pink\",\r",
+											"        \"black\",\r",
+											"        \"green_dark\",\r",
+											"        \"yellow_dark\",\r",
+											"        \"orange_dark\",\r",
+											"        \"red_dark\",\r",
+											"        \"purple_dark\",\r",
+											"        \"blue_dark\",\r",
+											"        \"sky_dark\",\r",
+											"        \"lime_dark\",\r",
+											"        \"pink_dark\",\r",
+											"        \"black_dark\",\r",
+											"        \"green_light\",\r",
+											"        \"yellow_light\",\r",
+											"        \"orange_light\",\r",
+											"        \"red_light\",\r",
+											"        \"purple_light\",\r",
+											"        \"blue_light\",\r",
+											"        \"sky_light\",\r",
+											"        \"lime_light\",\r",
+											"        \"pink_light\",\r",
+											"        \"black_light\"\r",
+											"      ]\r",
+											"    }\r",
+											"  },\r",
+											"  \"required\": [\r",
+											"    \"id\",\r",
+											"    \"name\",\r",
+											"    \"desc\",\r",
+											"    \"descData\",\r",
+											"    \"closed\",\r",
+											"    \"idOrganization\",\r",
+											"    \"idEnterprise\",\r",
+											"    \"pinned\",\r",
+											"    \"url\",\r",
+											"    \"shortUrl\",\r",
+											"    \"prefs\",\r",
+											"    \"labelNames\"\r",
+											"  ]\r",
+											"}\r",
+											"pm.environment.set(\"schema\", JSON.stringify(jsonSchema));"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "44118646-a556d69d-7adc-4ac9-b0cf-55697f469fd3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Protocol}}://api.trello.com/1/boards/{{Board\"заголовок доски\"}}?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{Board\"заголовок доски\"}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										},
+										{
+											"key": "fields",
+											"value": "id,name",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-04e06a47-7890-4fc7-95e5-53ccb36fb075"
+				},
+				{
+					"name": "Cards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-78d97402-9d87-46f4-bdd3-31075b8d0079"
+						},
+						{
+							"name": "Get Cards",
+							"id": "44118646-ef070ebd-00e7-4027-917a-5e8b642d41a8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trello.com/1/lists/684497a8f96fc4515a307c9e/cards?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"lists",
+										"684497a8f96fc4515a307c9e",
+										"cards"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get A Card",
+							"id": "44118646-3984094f-b3b7-4dd6-872b-75942ab6ba05",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"cards",
+										"68449f5325e161c038dd6bb1"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										},
+										{
+											"key": "id",
+											"value": "68449f5325e161c038dd6bb1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-ed639eee-53f7-45bf-b7ec-d525e797c339"
+				}
+			],
+			"id": "44118646-5033518d-8335-4d85-9f0a-5a5eb7163352"
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Boards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-e6685aa0-687f-45ec-be31-f4e9166d8913"
+						},
+						{
+							"name": "Create A Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5ee2129d-5545-4e78-ad45-c37bb80b9a06",
+										"exec": [
+											"pm.test(\"Get code 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var board = pm.response.json();\r",
+											"pm.test(\"Проверка структуры\",() => pm.expect(board).to.be.an(\"object\"));\r",
+											"\r",
+											"pm.test(\"response time is below 500\", ()=>{\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(`Board ${board.id} has required field`, ()=>{\r",
+											"        //pm.expect(board).to.have.keys(\"id\",\"name\");// только эти поля присутствуют в ответе\r",
+											"        pm.expect(board.id).to.be.a(\"string\");\r",
+											"        pm.expect(board.name).to.be.a(\"string\");\r",
+											"    });\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "44118646-e29158d5-f83f-420f-bdae-cb75ab2349d4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Моя доска\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Protocol}}://api.trello.com/1/boards/?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Моя доска",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										},
+										{
+											"key": "fields",
+											"value": "id,name",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-bedb2807-da7e-410a-97d1-42b9a29efcab"
+				},
+				{
+					"name": "Cards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-8ce5f7c0-7011-4301-b355-97a164f02183"
+						},
+						{
+							"name": "Create A Card",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6f630531-ca1f-4f11-a0e8-453f4f009227",
+										"exec": [
+											"pm.test(\"Get code 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var card = pm.response.json();\r",
+											"pm.test(\"Проверка структуры\",() => pm.expect(card).to.be.an(\"object\"));\r",
+											"\r",
+											"pm.test(\"response time is below 500\", ()=>{\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(`Card ${card.id} has required field`, ()=>{\r",
+											"        pm.expect(card).to.have.keys(\"id\");\r",
+											"        pm.expect(card.id).to.be.a(\"string\");\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "44118646-f4d17dec-f53f-4a3c-be1b-9c5c06e503ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idList\" : \"684497a8f96fc4515a307c9e\",\r\n    \"name\" : \"карта\"\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.trello.com/1/cards?idList=684497a8f96fc4515a307c9e&key={{TrelloKey}}&token={{TrelloToken}}&name=MyCard",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"cards"
+									],
+									"query": [
+										{
+											"key": "idList",
+											"value": "684497a8f96fc4515a307c9e"
+										},
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										},
+										{
+											"key": "name",
+											"value": "MyCard"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-cafcc7bb-1016-402b-bf65-109def6e6634"
+				}
+			],
+			"id": "44118646-44a1501e-a567-4e75-a34d-830e226a4409"
+		},
+		{
+			"name": "Put",
+			"item": [
+				{
+					"name": "Cards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-c3bcaf63-657c-4839-a568-295e457d108a"
+						},
+						{
+							"name": "Update A Card",
+							"id": "44118646-3f70ecee-5f27-4295-a99c-d5f7bde20c93",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"CARD&&&\",\r\n    \"desc\" : \"WOW\",\r\n    \"closed\" : false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"cards",
+										"68449f5325e161c038dd6bb1"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-de90d494-4254-4ebf-b118-5c08540ecb6b"
+				},
+				{
+					"name": "Boards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-ad687dc3-1fd2-40b4-bf1e-6fec592c5a98"
+						},
+						{
+							"name": "Update A Board",
+							"id": "44118646-dfcd3bbb-ae29-4535-8ef5-876e9a23fc6a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"их доска\",\r\n    \"desc\" : \"new one\",\r\n    \"closed\" : false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										"684555495cad1170aa0b84a2"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-baf8baa7-a51d-4c43-bf89-09b5001441d2"
+				}
+			],
+			"id": "44118646-df6c78b4-9f26-4835-b8cb-8ed6d2c05f25"
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "Boards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-ec211b0a-b7f9-42bb-a5e5-399535df1ee8"
+						},
+						{
+							"name": "del a board",
+							"id": "44118646-72c6ddb8-992e-4683-9779-9203d7dc6864",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Protocol}}://api.trello.com/1/boards/{{delID}}?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{delID}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "44118646-0a87c95c-6214-40c2-9fab-3602bc9ec7c0"
+				},
+				{
+					"name": "Cards",
+					"item": [
+						{
+							"name": "Validation Tests",
+							"item": [],
+							"id": "44118646-1a428528-da20-45c7-9025-9b31a3e4db17"
+						}
+					],
+					"id": "44118646-85f4c988-f318-4901-a6da-e2c207b800d7"
+				}
+			],
+			"id": "44118646-e949bbeb-dfae-47c5-a630-e43838823f1d"
+		}
+	]
+}
