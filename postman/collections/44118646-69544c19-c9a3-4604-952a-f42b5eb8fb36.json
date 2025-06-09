@@ -1767,6 +1767,33 @@
 						},
 						{
 							"name": "Update A Board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7680a4b0-4181-4001-809f-dfb0cd0a2d04",
+										"exec": [
+											"pm.test(\"Проверка статус кода 200\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var board = pm.response.json();\r",
+											"pm.test(\"Проверка структуры ответа\",() => pm.expect(board).to.be.an(\"object\"));\r",
+											"\r",
+											"pm.test(\"response time is below 500\", ()=>{\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"pm.test(`Board ${board.id} has required fields`, ()=>{\r",
+											"        pm.expect(board.id).to.be.a(\"string\");\r",
+											"        pm.expect(board.name).to.be.a(\"string\");\r",
+											"    });"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "44118646-dfcd3bbb-ae29-4535-8ef5-876e9a23fc6a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
