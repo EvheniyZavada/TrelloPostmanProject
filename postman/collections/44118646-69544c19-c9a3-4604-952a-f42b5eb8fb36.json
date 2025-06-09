@@ -1425,7 +1425,7 @@
 									"script": {
 										"id": "f3f32b2e-8ee1-48c0-932e-8471d686c8d9",
 										"exec": [
-											"pm.test(\"Get code 200\", function(){\r",
+											"pm.test(\"Проверка статус кода 200\", function(){\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
