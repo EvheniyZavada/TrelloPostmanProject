@@ -797,7 +797,25 @@
 										"exec": [
 											"pm.test(\"Проверка статус кода 200\", ()=>{\r",
 											"    pm.response.to.have.status(200);\r",
-											"});"
+											"});\r",
+											"\r",
+											"let cards = pm.response.json();\r",
+											"pm.test(\"Проверка структуры ответа\", ()=>pm.expect(cards).to.be.an(\"array\"));\r",
+											"\r",
+											"if(cards.length > 0){\r",
+											"    pm.environment.set(\"newCardId\", cards[0].id);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Error, array is empty\");\r",
+											"}\r",
+											"\r",
+											"cards.forEach(card => {\r",
+											"    pm.test(`Card ${card.id} has required fields`, ()=>{\r",
+											"    //  pm.expect(board).to.have.keys(\"id\",\"name\");\r",
+											"        pm.expect(card.id).to.be.a(\"string\");\r",
+											"        pm.expect(card.name).to.be.a(\"string\");\r",
+											"    })\r",
+											"})"
 										],
 										"type": "text/javascript",
 										"packages": {}
