@@ -1711,6 +1711,35 @@
 						},
 						{
 							"name": "Update A Card",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "084745dd-ff4d-445f-bf73-9e0b8749eb65",
+										"exec": [
+											"pm.test(\"Проверка статус кода 200\", ()=>{\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var card = pm.response.json();\r",
+											"pm.test(\"Проверка структуры\",() => pm.expect(card).to.be.an(\"object\"));\r",
+											"\r",
+											"pm.test(\"response time is below 500\", ()=>{\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(`Card ${card.id} has required field`, ()=>{\r",
+											"        pm.expect(card.id).to.be.a(\"string\");\r",
+											"    });\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "44118646-3f70ecee-5f27-4295-a99c-d5f7bde20c93",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
