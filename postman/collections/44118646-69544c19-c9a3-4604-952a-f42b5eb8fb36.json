@@ -2722,7 +2722,32 @@
 					"item": [
 						{
 							"name": "Validation Tests",
-							"item": [],
+							"item": [
+								{
+									"name": "New Request",
+									"id": "44118646-bd43dc00-4806-4ac0-b4e4-de70ea26fc19",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"id": "44118646-066f7951-516e-4104-8e04-2d13d3ed11e8",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							],
 							"id": "44118646-1a428528-da20-45c7-9025-9b31a3e4db17"
 						},
 						{
