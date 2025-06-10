@@ -2622,7 +2622,7 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{Protocol}}://api.trello.com/1/boards/{{delID}}?key={{TrelloKey}}&token={{TrelloToken}}&BR=BR",
+											"raw": "{{Protocol}}://api.trello.com/1/boards/{{delBoardID}}?key={{TrelloKey}}&token={{TrelloToken}}&BR=BR",
 											"protocol": "{{Protocol}}",
 											"host": [
 												"api",
@@ -2632,7 +2632,7 @@
 											"path": [
 												"1",
 												"boards",
-												"{{delID}}"
+												"{{delBoardID}}"
 											],
 											"query": [
 												{
@@ -2645,8 +2645,7 @@
 												},
 												{
 													"key": "BR",
-													"value": "BR",
-													"type": "text"
+													"value": "BR"
 												}
 											]
 										}
