@@ -149,8 +149,8 @@
 													"    pm.response.to.have.status(404);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"проверка лога: Cannot GET /1/memers..\", ()=>{\r",
-													"    pm.response.to.have.body(\"Cannot GET /1/memers/zavada1997@gmail.com/boards?key=4d9dd97638a81eaec3d5a7f125b6b562&token=ATTAac7d6572f06502abadc634407cef8927be972cf00c41777a053365e7ffcb6101C7527E9B&fields=id,name\")\r",
+													"pm.test(\"проверка лога: model not found\", ()=>{\r",
+													"    pm.response.to.have.body(\"model not found\")\r",
 													"});"
 												],
 												"type": "text/javascript",
@@ -166,7 +166,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&token={{TrelloToken}}&fields=id,name",
+											"raw": "{{Protocol}}://api.trello.com/1/members/zavada1996@gmail.com/boards?key={{TrelloKey}}&token={{TrelloToken}}&fields=id,name",
 											"protocol": "{{Protocol}}",
 											"host": [
 												"api",
@@ -176,7 +176,7 @@
 											"path": [
 												"1",
 												"members",
-												"{{UserName}}",
+												"zavada1996@gmail.com",
 												"boards"
 											],
 											"query": [
