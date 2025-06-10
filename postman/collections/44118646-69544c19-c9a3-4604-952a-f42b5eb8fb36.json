@@ -2339,14 +2339,66 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "New Request",
+									"name": "400 invalid body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "a6481e5c-d1f7-4af6-a96b-15432d6fe24a",
+												"exec": [
+													"pm.test(\"проверка кода 400\", function(){\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Error parsing body\", ()=>{\r",
+													"    pm.response.to.have.body(\"Error parsing body\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-5e461401-3e5a-4aab-aa8d-b9a600837d8a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "mmm, danone",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"boards",
+												"684555495cad1170aa0b84a2"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								},
