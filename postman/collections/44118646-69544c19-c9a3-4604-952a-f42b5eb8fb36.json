@@ -2132,13 +2132,56 @@
 							"item": [
 								{
 									"name": "404 wrong method",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5f54f1e8-a21a-4a77-b53e-c8dc3eeb71db",
+												"exec": [
+													"pm.test(\"проверка кода 404\", function(){\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Cannot POST /1/cards..\", ()=>{\r",
+													"    pm.response.to.have.body(\"Cannot POST /1/cards/68449f5325e161c038dd6bb1?key=4d9dd97638a81eaec3d5a7f125b6b562&token=ATTAac7d6572f06502abadc634407cef8927be972cf00c41777a053365e7ffcb6101C7527E9B\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-046400c5-cc5b-4db7-8264-6ea53f6877b9",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"cards",
+												"68449f5325e161c038dd6bb1"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								},
