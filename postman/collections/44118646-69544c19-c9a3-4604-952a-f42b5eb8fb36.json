@@ -2786,13 +2786,65 @@
 								},
 								{
 									"name": "400 unnecessary body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "8dccd1b1-7c95-4daa-9fcc-0a35b9f0a16b",
+												"exec": [
+													"pm.test(\"проверка кода 400\", function(){\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Error parsing body\", ()=>{\r",
+													"    pm.response.to.have.body(\"Error parsing body\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-066f7951-516e-4104-8e04-2d13d3ed11e8",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "nobodynobodynobody",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/cards/{{delCardID}}?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"cards",
+												"{{delCardID}}"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								}
