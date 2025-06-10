@@ -2595,13 +2595,61 @@
 								},
 								{
 									"name": "404 nonexisted param",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b96695f7-42b0-4039-a1a6-016c316ec23a",
+												"exec": [
+													"pm.test(\"Status code is 404\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога:The requested resource was not found\", ()=>{\r",
+													"    pm.response.to.have.body(\"The requested resource was not found.\")\r",
+													"})"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-dcaeec59-e1b3-490b-9c16-ee728d6d1fa4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/boards/{{delID}}?key={{TrelloKey}}&token={{TrelloToken}}&BR=BR",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"boards",
+												"{{delID}}"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												},
+												{
+													"key": "BR",
+													"value": "BR",
+													"type": "text"
+												}
+											]
+										}
 									},
 									"response": []
 								}
