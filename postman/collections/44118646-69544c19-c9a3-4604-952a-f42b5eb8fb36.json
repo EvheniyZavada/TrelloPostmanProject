@@ -2542,6 +2542,28 @@
 						},
 						{
 							"name": "del a board",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "98063131-8d9b-443d-819c-9eb14b36e542",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test('проверка лога:\"null\"', () => {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql('null');\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "44118646-72c6ddb8-992e-4683-9779-9203d7dc6864",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
