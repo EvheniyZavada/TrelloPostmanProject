@@ -2608,6 +2608,18 @@
 							"name": "Validation Tests",
 							"item": [],
 							"id": "44118646-1a428528-da20-45c7-9025-9b31a3e4db17"
+						},
+						{
+							"name": "New Request",
+							"id": "44118646-4f2cfd2e-7132-4d18-8c96-19b9d737273f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "44118646-85f4c988-f318-4901-a6da-e2c207b800d7"
