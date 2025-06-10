@@ -1914,7 +1914,7 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "New Request",
+									"name": "no body",
 									"id": "44118646-18bb6965-c757-4009-8695-bb352f164cff",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
