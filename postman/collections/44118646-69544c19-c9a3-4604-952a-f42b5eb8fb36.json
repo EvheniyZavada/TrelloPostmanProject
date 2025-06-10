@@ -786,7 +786,7 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "401 wrong token",
+									"name": "401 wrong key",
 									"event": [
 										{
 											"listen": "test",
