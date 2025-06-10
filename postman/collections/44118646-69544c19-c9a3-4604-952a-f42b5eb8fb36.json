@@ -1695,7 +1695,7 @@
 													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"проверка лога: Invalid app token\", ()=>{\r",
+													"pm.test(\"проверка лога: Error parsing body\", ()=>{\r",
 													"    pm.response.to.have.body(\"Error parsing body\")\r",
 													"});"
 												],
