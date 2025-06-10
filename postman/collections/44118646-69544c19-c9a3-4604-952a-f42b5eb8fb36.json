@@ -1915,13 +1915,55 @@
 							"item": [
 								{
 									"name": "no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "672898e1-6bd9-4ad1-9e8b-5a8f39888bd4",
+												"exec": [
+													"pm.test(\"проверка кода 400\", function(){\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: invalid value for idList\", ()=>{\r",
+													"    pm.response.to.have.body(\"invalid value for idList\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-18bb6965-c757-4009-8695-bb352f164cff",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "https://api.trello.com/1/cards?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"cards"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								},
