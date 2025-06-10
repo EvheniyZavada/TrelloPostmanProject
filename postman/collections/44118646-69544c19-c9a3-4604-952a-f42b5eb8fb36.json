@@ -1987,7 +1987,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.trello.com/1/cards?idList=684497a8f96fc4515a307c9e&key={{TrelloKey}}&token={{TrelloToken}}&name=MyCard",
+									"raw": "https://api.trello.com/1/cards?key={{TrelloKey}}&token={{TrelloToken}}",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -2001,7 +2001,8 @@
 									"query": [
 										{
 											"key": "idList",
-											"value": "684497a8f96fc4515a307c9e"
+											"value": "684497a8f96fc4515a307c9e",
+											"disabled": true
 										},
 										{
 											"key": "key",
@@ -2013,7 +2014,8 @@
 										},
 										{
 											"key": "name",
-											"value": "MyCard"
+											"value": "MyCard",
+											"disabled": true
 										}
 									]
 								}
