@@ -2541,7 +2541,7 @@
 							"id": "44118646-ec211b0a-b7f9-42bb-a5e5-399535df1ee8"
 						},
 						{
-							"name": "del a board",
+							"name": "Delete A Board",
 							"event": [
 								{
 									"listen": "test",
