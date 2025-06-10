@@ -1685,13 +1685,69 @@
 							"item": [
 								{
 									"name": "400 invalid body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b3b7f365-086b-4e0b-a5ad-86308d9fe81d",
+												"exec": [
+													"pm.test(\"проверка кода 400\", function(){\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Invalid app token\", ()=>{\r",
+													"    pm.response.to.have.body(\"Error parsing body\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-71c10d80-5c11-4195-9787-315e31b51a48",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "(.)  (.)\r\n   \\/\r\n\\______/",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/boards/?name=Доска&key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"boards",
+												""
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "Доска"
+												},
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								}
@@ -1747,7 +1803,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{Protocol}}://api.trello.com/1/boards/?name=Доска&key={{TrelloKey}}&token={{TrelloToken}}",
+									"raw": "{{Protocol}}://api.trello.com/1/boards/?key={{TrelloKey}}&token={{TrelloToken}}",
 									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
@@ -1762,7 +1818,8 @@
 									"query": [
 										{
 											"key": "name",
-											"value": "Доска"
+											"value": "Доска",
+											"disabled": true
 										},
 										{
 											"key": "key",
