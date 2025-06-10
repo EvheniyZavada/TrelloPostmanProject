@@ -2594,7 +2594,7 @@
 									"response": []
 								},
 								{
-									"name": "404",
+									"name": "404 nonexisted param",
 									"id": "44118646-dcaeec59-e1b3-490b-9c16-ee728d6d1fa4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
