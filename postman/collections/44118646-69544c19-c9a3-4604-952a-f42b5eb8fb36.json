@@ -1914,7 +1914,7 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "no body",
+									"name": "400 no body",
 									"event": [
 										{
 											"listen": "test",
