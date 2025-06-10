@@ -138,7 +138,7 @@
 									"response": []
 								},
 								{
-									"name": "404 members>memers",
+									"name": "404 wrong username",
 									"event": [
 										{
 											"listen": "test",
