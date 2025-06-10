@@ -1968,7 +1968,7 @@
 									"response": []
 								},
 								{
-									"name": "New Request",
+									"name": "404 invalid URN",
 									"id": "44118646-7a7b4f6a-e713-40a6-a5fb-a8734d54ac8a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
