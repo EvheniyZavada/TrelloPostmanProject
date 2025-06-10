@@ -843,13 +843,57 @@
 								},
 								{
 									"name": "400 wrong id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "9f780b7c-7d2a-415f-89b3-3209bf3b6ba6",
+												"exec": [
+													"pm.test(\"проверка кода 400\", function(){\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Invalid app token\", ()=>{\r",
+													"    pm.response.to.have.body(\"invalid id\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-efb0b5ce-4260-4d7b-ac0c-5745217abd11",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
 										"method": "GET",
-										"header": []
+										"header": [],
+										"url": {
+											"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"cards",
+												"68449f5325e161c038dd6"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								}
