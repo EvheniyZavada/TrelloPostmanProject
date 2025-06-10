@@ -798,7 +798,7 @@
 													"});\r",
 													"\r",
 													"pm.test(\"проверка лога: Invalid app token\", ()=>{\r",
-													"    pm.response.to.have.body(\"invalid app token\")\r",
+													"    pm.response.to.have.body(\"invalid key\")\r",
 													"});\r",
 													""
 												],
