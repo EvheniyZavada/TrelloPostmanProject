@@ -1753,13 +1753,66 @@
 								},
 								{
 									"name": "401 no key param",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7023c5cf-48bc-4329-b0df-e19d3af5a28e",
+												"exec": [
+													"pm.test(\"проверка кода 401\", function(){\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: invalid key\", ()=>{\r",
+													"    pm.response.to.have.body(\"invalid key\")\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-9628d715-58f0-41ec-a292-d372c02a1450",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Моя\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/boards/?token={{TrelloToken}}",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"boards",
+												""
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}",
+													"disabled": true
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								}
