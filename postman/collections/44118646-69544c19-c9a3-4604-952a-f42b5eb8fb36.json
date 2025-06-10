@@ -898,7 +898,7 @@
 									"response": []
 								},
 								{
-									"name": "worng m",
+									"name": "400 worng method",
 									"id": "44118646-ef4dd20c-4e18-4143-a366-4949e151ce18",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
