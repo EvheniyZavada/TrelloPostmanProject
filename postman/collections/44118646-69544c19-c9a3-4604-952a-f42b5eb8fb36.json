@@ -2403,7 +2403,7 @@
 									"response": []
 								},
 								{
-									"name": "New Request",
+									"name": "200 bug",
 									"id": "44118646-d1445d1c-c5ec-4b58-81e0-61bd85bf0f3a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
