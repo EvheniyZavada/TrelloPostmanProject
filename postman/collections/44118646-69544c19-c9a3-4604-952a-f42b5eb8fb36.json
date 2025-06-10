@@ -2186,7 +2186,7 @@
 									"response": []
 								},
 								{
-									"name": "New Request",
+									"name": "401 no key, no token",
 									"id": "44118646-b8a7632b-46d8-4ef4-bb42-50dea8da5a98",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
