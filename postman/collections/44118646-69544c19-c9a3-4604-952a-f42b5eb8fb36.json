@@ -1752,7 +1752,7 @@
 									"response": []
 								},
 								{
-									"name": "New Request",
+									"name": "401 no key param",
 									"id": "44118646-9628d715-58f0-41ec-a292-d372c02a1450",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
