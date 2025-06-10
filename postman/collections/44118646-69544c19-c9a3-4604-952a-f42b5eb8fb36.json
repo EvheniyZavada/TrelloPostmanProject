@@ -2131,7 +2131,7 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "New Request",
+									"name": "404 wrong method",
 									"id": "44118646-046400c5-cc5b-4db7-8264-6ea53f6877b9",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
