@@ -2611,13 +2611,53 @@
 						},
 						{
 							"name": "Delete A Card",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8e319795-1e9f-4110-84e7-e63c728e117c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "44118646-4f2cfd2e-7132-4d18-8c96-19b9d737273f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Protocol}}://api.trello.com/1/cards/{{delCardID}}?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"cards",
+										"{{delCardID}}"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										}
+									]
+								}
 							},
 							"response": []
 						}
