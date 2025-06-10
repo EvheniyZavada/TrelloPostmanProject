@@ -2537,7 +2537,20 @@
 					"item": [
 						{
 							"name": "Validation Tests",
-							"item": [],
+							"item": [
+								{
+									"name": "New Request",
+									"id": "44118646-55c1851e-6fba-4ae6-939f-a78f99601824",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								}
+							],
 							"id": "44118646-ec211b0a-b7f9-42bb-a5e5-399535df1ee8"
 						},
 						{
