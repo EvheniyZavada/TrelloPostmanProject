@@ -2724,13 +2724,63 @@
 							"item": [
 								{
 									"name": "401 space before token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e118ac9e-de56-472a-8da7-c84d10dc71fa",
+												"exec": [
+													"pm.test(\"проверка кода 401\", function(){\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"проверка лога: Invalid app token\", ()=>{\r",
+													"    pm.response.to.have.body(\"invalid app token\")\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "44118646-bd43dc00-4806-4ac0-b4e4-de70ea26fc19",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
-										"method": "GET",
-										"header": []
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "AQA",
+												"value": "o_o",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{Protocol}}://api.trello.com/1/cards/{{delCardID}}?key={{TrelloKey}}&token= {{TrelloToken}}",
+											"protocol": "{{Protocol}}",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"cards",
+												"{{delCardID}}"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": " {{TrelloToken}}"
+												}
+											]
+										}
 									},
 									"response": []
 								},
