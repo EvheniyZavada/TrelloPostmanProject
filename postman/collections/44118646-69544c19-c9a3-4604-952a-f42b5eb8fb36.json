@@ -2539,7 +2539,7 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "New Request",
+									"name": "400 empty ID",
 									"id": "44118646-55c1851e-6fba-4ae6-939f-a78f99601824",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
