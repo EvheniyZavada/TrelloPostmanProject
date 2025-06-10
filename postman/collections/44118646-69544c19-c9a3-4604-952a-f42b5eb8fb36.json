@@ -1684,7 +1684,7 @@
 							"name": "Validation Tests",
 							"item": [
 								{
-									"name": "New Request",
+									"name": "400 invalid body",
 									"id": "44118646-71c10d80-5c11-4195-9787-315e31b51a48",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
