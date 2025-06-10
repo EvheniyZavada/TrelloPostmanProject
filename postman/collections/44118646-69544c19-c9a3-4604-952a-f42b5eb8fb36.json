@@ -2785,7 +2785,7 @@
 									"response": []
 								},
 								{
-									"name": "400",
+									"name": "400 unnecessary body",
 									"id": "44118646-066f7951-516e-4104-8e04-2d13d3ed11e8",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
