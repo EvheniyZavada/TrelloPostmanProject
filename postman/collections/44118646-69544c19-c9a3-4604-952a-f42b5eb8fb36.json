@@ -1920,7 +1920,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Моя доска\"\r\n}",
+									"raw": "{\r\n    \"name\" : \"доска\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
