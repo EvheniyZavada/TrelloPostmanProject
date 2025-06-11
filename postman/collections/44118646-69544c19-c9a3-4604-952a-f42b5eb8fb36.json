@@ -2251,6 +2251,200 @@
 							"id": "44118646-c3bcaf63-657c-4839-a568-295e457d108a"
 						},
 						{
+							"name": "Boards",
+							"item": [
+								{
+									"name": "Validation Tests",
+									"item": [
+										{
+											"name": "400 invalid body",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "a6481e5c-d1f7-4af6-a96b-15432d6fe24a",
+														"exec": [
+															"pm.test(\"проверка кода 400\", function(){\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"проверка лога: Error parsing body\", ()=>{\r",
+															"    pm.response.to.have.body(\"Error parsing body\")\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "44118646-5e461401-3e5a-4aab-aa8d-b9a600837d8a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "mmm, danone",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
+													"protocol": "https",
+													"host": [
+														"api",
+														"trello",
+														"com"
+													],
+													"path": [
+														"1",
+														"boards",
+														"684555495cad1170aa0b84a2"
+													],
+													"query": [
+														{
+															"key": "key",
+															"value": "{{TrelloKey}}"
+														},
+														{
+															"key": "token",
+															"value": "{{TrelloToken}}"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "200 BUG(invalid protocol)",
+											"id": "44118646-d1445d1c-c5ec-4b58-81e0-61bd85bf0f3a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\" : \"Их доска\",\r\n    \"desc\" : \"Описание\",\r\n    \"closed\" : false\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
+													"protocol": "http",
+													"host": [
+														"api",
+														"trello",
+														"com"
+													],
+													"path": [
+														"1",
+														"boards",
+														"684555495cad1170aa0b84a2"
+													],
+													"query": [
+														{
+															"key": "key",
+															"value": "{{TrelloKey}}"
+														},
+														{
+															"key": "token",
+															"value": "{{TrelloToken}}"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"id": "44118646-ad687dc3-1fd2-40b4-bf1e-6fec592c5a98"
+								},
+								{
+									"name": "Update A Board",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "7680a4b0-4181-4001-809f-dfb0cd0a2d04",
+												"exec": [
+													"pm.test(\"Проверка статус кода 200\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"var board = pm.response.json();\r",
+													"pm.test(\"Проверка структуры ответа\",() => pm.expect(board).to.be.an(\"object\"));\r",
+													"\r",
+													"pm.test(\"response time is below 500\", ()=>{\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(`Board ${board.id} has required fields`, ()=>{\r",
+													"        pm.expect(board.id).to.be.a(\"string\");\r",
+													"        pm.expect(board.name).to.be.a(\"string\");\r",
+													"    });\r",
+													"    "
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "44118646-dfcd3bbb-ae29-4535-8ef5-876e9a23fc6a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Их доска\",\r\n    \"desc\" : \"Описание\",\r\n    \"closed\" : false\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"trello",
+												"com"
+											],
+											"path": [
+												"1",
+												"boards",
+												"684555495cad1170aa0b84a2"
+											],
+											"query": [
+												{
+													"key": "key",
+													"value": "{{TrelloKey}}"
+												},
+												{
+													"key": "token",
+													"value": "{{TrelloToken}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "44118646-baf8baa7-a51d-4c43-bf89-09b5001441d2"
+						},
+						{
 							"name": "Update A Card",
 							"event": [
 								{
@@ -2326,200 +2520,6 @@
 						}
 					],
 					"id": "44118646-de90d494-4254-4ebf-b118-5c08540ecb6b"
-				},
-				{
-					"name": "Boards",
-					"item": [
-						{
-							"name": "Validation Tests",
-							"item": [
-								{
-									"name": "400 invalid body",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "a6481e5c-d1f7-4af6-a96b-15432d6fe24a",
-												"exec": [
-													"pm.test(\"проверка кода 400\", function(){\r",
-													"    pm.response.to.have.status(400);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"проверка лога: Error parsing body\", ()=>{\r",
-													"    pm.response.to.have.body(\"Error parsing body\")\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "44118646-5e461401-3e5a-4aab-aa8d-b9a600837d8a",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "mmm, danone",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "https://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
-											"protocol": "https",
-											"host": [
-												"api",
-												"trello",
-												"com"
-											],
-											"path": [
-												"1",
-												"boards",
-												"684555495cad1170aa0b84a2"
-											],
-											"query": [
-												{
-													"key": "key",
-													"value": "{{TrelloKey}}"
-												},
-												{
-													"key": "token",
-													"value": "{{TrelloToken}}"
-												}
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "200 BUG(invalid protocol)",
-									"id": "44118646-d1445d1c-c5ec-4b58-81e0-61bd85bf0f3a",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"name\" : \"Их доска\",\r\n    \"desc\" : \"Описание\",\r\n    \"closed\" : false\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
-											"protocol": "http",
-											"host": [
-												"api",
-												"trello",
-												"com"
-											],
-											"path": [
-												"1",
-												"boards",
-												"684555495cad1170aa0b84a2"
-											],
-											"query": [
-												{
-													"key": "key",
-													"value": "{{TrelloKey}}"
-												},
-												{
-													"key": "token",
-													"value": "{{TrelloToken}}"
-												}
-											]
-										}
-									},
-									"response": []
-								}
-							],
-							"id": "44118646-ad687dc3-1fd2-40b4-bf1e-6fec592c5a98"
-						},
-						{
-							"name": "Update A Board",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "7680a4b0-4181-4001-809f-dfb0cd0a2d04",
-										"exec": [
-											"pm.test(\"Проверка статус кода 200\", function(){\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"var board = pm.response.json();\r",
-											"pm.test(\"Проверка структуры ответа\",() => pm.expect(board).to.be.an(\"object\"));\r",
-											"\r",
-											"pm.test(\"response time is below 500\", ()=>{\r",
-											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-											"});\r",
-											"\r",
-											"pm.test(`Board ${board.id} has required fields`, ()=>{\r",
-											"        pm.expect(board.id).to.be.a(\"string\");\r",
-											"        pm.expect(board.name).to.be.a(\"string\");\r",
-											"    });\r",
-											"    "
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "44118646-dfcd3bbb-ae29-4535-8ef5-876e9a23fc6a",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Их доска\",\r\n    \"desc\" : \"Описание\",\r\n    \"closed\" : false\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
-									"protocol": "https",
-									"host": [
-										"api",
-										"trello",
-										"com"
-									],
-									"path": [
-										"1",
-										"boards",
-										"684555495cad1170aa0b84a2"
-									],
-									"query": [
-										{
-											"key": "key",
-											"value": "{{TrelloKey}}"
-										},
-										{
-											"key": "token",
-											"value": "{{TrelloToken}}"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "44118646-baf8baa7-a51d-4c43-bf89-09b5001441d2"
 				}
 			],
 			"id": "44118646-df6c78b4-9f26-4835-b8cb-8ed6d2c05f25"
