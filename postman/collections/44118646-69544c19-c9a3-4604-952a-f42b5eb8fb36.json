@@ -1007,7 +1007,9 @@
 											"    pm.expect(pm.response.json()).to.have.jsonSchema(jsonSchema);\r",
 											"});\r",
 											"\r",
-											"pm.environment.set(\"ValidCardId\", cards[0].id);"
+											"pm.environment.set(\"ValidCardId\", cards[0].id);\r",
+											"pm.environment.set(\"ValidCardId\", cards[1].id);\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
