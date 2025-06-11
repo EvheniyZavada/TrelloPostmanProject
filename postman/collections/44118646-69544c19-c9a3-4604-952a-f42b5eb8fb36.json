@@ -1836,13 +1836,11 @@
 											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
 											"});\r",
 											"\r",
-											"\r",
 											"pm.test(`Board ${board.id} has required field`, ()=>{\r",
 											"        //pm.expect(board).to.have.keys(\"id\",\"name\");// только эти поля присутствуют в ответе\r",
 											"        pm.expect(board.id).to.be.a(\"string\");\r",
 											"        pm.expect(board.name).to.be.a(\"string\");\r",
-											"    });\r",
-											""
+											"    });"
 										],
 										"type": "text/javascript",
 										"packages": {}
