@@ -2061,8 +2061,8 @@
 											}
 										},
 										"url": {
-											"raw": "https://api.trello.com/1/carts?key={{TrelloKey}}&token={{TrelloToken}}",
-											"protocol": "https",
+											"raw": "{{Protocol}}://api.trello.com/1/carts?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "{{Protocol}}",
 											"host": [
 												"api",
 												"trello",
@@ -2135,8 +2135,8 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.trello.com/1/cards?key={{TrelloKey}}&token={{TrelloToken}}",
-									"protocol": "https",
+									"raw": "{{Protocol}}://api.trello.com/1/cards?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
 										"trello",
