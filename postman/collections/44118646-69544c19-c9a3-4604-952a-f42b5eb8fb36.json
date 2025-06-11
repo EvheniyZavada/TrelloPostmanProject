@@ -1637,8 +1637,8 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{TrelloKey}}&token={{TrelloToken}}",
-									"protocol": "https",
+									"raw": "{{Protocol}}://api.trello.com/1/cards/{{ValidCardId}}?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
 										"trello",
@@ -1647,7 +1647,7 @@
 									"path": [
 										"1",
 										"cards",
-										"68449f5325e161c038dd6bb1"
+										"{{ValidCardId}}"
 									],
 									"query": [
 										{
