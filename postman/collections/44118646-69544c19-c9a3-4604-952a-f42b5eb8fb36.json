@@ -2476,8 +2476,8 @@
 											}
 										},
 										"url": {
-											"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1",
-											"protocol": "https",
+											"raw": "{{Protocol}}://api.trello.com/1/cards/{{ValidCardId}}",
+											"protocol": "{{Protocol}}",
 											"host": [
 												"api",
 												"trello",
@@ -2486,7 +2486,7 @@
 											"path": [
 												"1",
 												"cards",
-												"68449f5325e161c038dd6bb1"
+												"{{ValidCardId}}"
 											],
 											"query": [
 												{
