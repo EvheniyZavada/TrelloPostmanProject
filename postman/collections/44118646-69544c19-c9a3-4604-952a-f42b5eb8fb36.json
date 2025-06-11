@@ -2259,8 +2259,7 @@
 											"pm.test(`Board ${board.id} has required fields`, ()=>{\r",
 											"        pm.expect(board.id).to.be.a(\"string\");\r",
 											"        pm.expect(board.name).to.be.a(\"string\");\r",
-											"    });\r",
-											"    "
+											"    });"
 										],
 										"type": "text/javascript",
 										"packages": {}
