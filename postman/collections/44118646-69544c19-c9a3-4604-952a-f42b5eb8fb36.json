@@ -1004,7 +1004,9 @@
 											"let jsonSchema = JSON.parse(pm.environment.get(\"schema\"));\r",
 											"pm.test(\"json schema is valid\", function(){\r",
 											"    pm.expect(pm.response.json()).to.have.jsonSchema(jsonSchema);\r",
-											"});"
+											"});\r",
+											"\r",
+											"pm.environment.set(\"ValidCardId\", cards[0].id);"
 										],
 										"type": "text/javascript",
 										"packages": {}
