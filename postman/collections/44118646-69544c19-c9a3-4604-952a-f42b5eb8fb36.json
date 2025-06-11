@@ -2395,7 +2395,7 @@
 													"});\r",
 													"\r",
 													"pm.test(\"проверка лога: Cannot POST /1/cards..\", ()=>{\r",
-													"    pm.response.to.have.body(\"Cannot POST /1/cards/68449f5325e161c038dd6bb1?key=4d9dd97638a81eaec3d5a7f125b6b562&token=ATTAac7d6572f06502abadc634407cef8927be972cf00c41777a053365e7ffcb6101C7527E9B\")\r",
+													"    pm.response.to.have.body(\"Cannot POST /1/cards/68345fadb7caea7fdd9104e3?key=4d9dd97638a81eaec3d5a7f125b6b562&token=ATTAac7d6572f06502abadc634407cef8927be972cf00c41777a053365e7ffcb6101C7527E9B\")\r",
 													"});"
 												],
 												"type": "text/javascript",
