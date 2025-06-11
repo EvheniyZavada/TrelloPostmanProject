@@ -815,7 +815,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{TrelloKey}}&token={{TrelloToken}}",
+											"raw": "https://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{InvalidTrelloKey}}K&token={{TrelloToken}}",
 											"protocol": "https",
 											"host": [
 												"api",
@@ -830,7 +830,7 @@
 											"query": [
 												{
 													"key": "key",
-													"value": "{{TrelloKey}}"
+													"value": "{{InvalidTrelloKey}}K"
 												},
 												{
 													"key": "token",
