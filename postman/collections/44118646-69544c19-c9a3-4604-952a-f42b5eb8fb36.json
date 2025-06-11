@@ -241,7 +241,6 @@
 											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
 											"})\r",
 											"\r",
-											"\r",
 											"var currentTime = pm.response.responseTime;\r",
 											"var previousTime = pm.environment.get(\"prevResponseTime\");\r",
 											"\r",
@@ -1680,13 +1679,12 @@
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Your test name\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.value).to.eql(100);\r",
-											"});\r",
+											"pm.test(\"Got Json\", ()=>{\r",
+											"    pm.response.to.be.json;\r",
+											"})\r",
 											"\r",
 											"let lists = pm.response.json();\r",
-											"pm.environment.set(\"ValidListId\",lists.id);"
+											"pm.environment.set(\"ValidListId\",lists[0].id);"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -1701,8 +1699,8 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.trello.com/1/boards/{{ExistingBoardId}}/lists?key={{TrelloKey}}&token={{TrelloToken}}",
-									"protocol": "https",
+									"raw": "{{Protocol}}://api.trello.com/1/boards/{{ExistingBoardId}}/lists?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
 										"trello",
