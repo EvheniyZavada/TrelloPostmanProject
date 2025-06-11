@@ -2270,7 +2270,7 @@
 											}
 										},
 										"url": {
-											"raw": "http://api.trello.com/1/boards/684555495cad1170aa0b84a2?key={{TrelloKey}}&token={{TrelloToken}}",
+											"raw": "http://api.trello.com/1/boards/{{UpdateBoardId}}?key={{TrelloKey}}&token={{TrelloToken}}",
 											"protocol": "http",
 											"host": [
 												"api",
@@ -2280,7 +2280,7 @@
 											"path": [
 												"1",
 												"boards",
-												"684555495cad1170aa0b84a2"
+												"{{UpdateBoardId}}"
 											],
 											"query": [
 												{
