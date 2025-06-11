@@ -166,7 +166,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{Protocol}}://api.trello.com/1/members/zavada1996@gmail.com/boards?key={{TrelloKey}}&token={{TrelloToken}}&fields=id,name",
+											"raw": "{{Protocol}}://api.trello.com/1/members/{{InvalidUserName}}/boards?key={{TrelloKey}}&token={{TrelloToken}}&fields=id,name",
 											"protocol": "{{Protocol}}",
 											"host": [
 												"api",
@@ -176,7 +176,7 @@
 											"path": [
 												"1",
 												"members",
-												"zavada1996@gmail.com",
+												"{{InvalidUserName}}",
 												"boards"
 											],
 											"query": [
