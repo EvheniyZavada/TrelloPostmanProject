@@ -744,7 +744,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{Protocol}}://api.trello.com/1/boards/{{Board\"заголовок доски\"}}?key={{TrelloKey}}&token={{TrelloToken}}",
+									"raw": "{{Protocol}}://api.trello.com/1/boards/{{ExistingBoardId}}?key={{TrelloKey}}&token={{TrelloToken}}",
 									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
@@ -754,7 +754,7 @@
 									"path": [
 										"1",
 										"boards",
-										"{{Board\"заголовок доски\"}}"
+										"{{ExistingBoardId}}"
 									],
 									"query": [
 										{
