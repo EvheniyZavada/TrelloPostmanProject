@@ -2270,8 +2270,8 @@
 											}
 										},
 										"url": {
-											"raw": "http://api.trello.com/1/boards/{{UpdateBoardId}}?key={{TrelloKey}}&token={{TrelloToken}}",
-											"protocol": "http",
+											"raw": "{{InvalidProtocol}}://api.trello.com/1/boards/{{UpdateBoardId}}?key={{TrelloKey}}&token={{TrelloToken}}",
+											"protocol": "{{InvalidProtocol}}",
 											"host": [
 												"api",
 												"trello",
