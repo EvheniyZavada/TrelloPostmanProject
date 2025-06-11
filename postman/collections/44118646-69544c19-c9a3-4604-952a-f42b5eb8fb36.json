@@ -45,7 +45,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&token={{TrelloToken}}m&fields=id,name",
+											"raw": "{{Protocol}}://api.trello.com/1/members/{{UserName}}/boards?key={{TrelloKey}}&token={{InvalidTrelloToken}}m&fields=id,name",
 											"protocol": "{{Protocol}}",
 											"host": [
 												"api",
@@ -65,7 +65,7 @@
 												},
 												{
 													"key": "token",
-													"value": "{{TrelloToken}}m"
+													"value": "{{InvalidTrelloToken}}m"
 												},
 												{
 													"key": "fields",
