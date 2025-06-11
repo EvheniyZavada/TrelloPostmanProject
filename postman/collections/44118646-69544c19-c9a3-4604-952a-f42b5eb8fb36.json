@@ -1668,13 +1668,61 @@
 						},
 						{
 							"name": "Get Lists",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "995a6c6c-940c-4f17-9148-f03931520799",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.value).to.eql(100);\r",
+											"});\r",
+											"\r",
+											"let lists = pm.response.json();\r",
+											"pm.environment.set(\"ValidListId\",lists.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "44118646-47eeddee-ab97-4494-841d-0a88a274da09",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "https://api.trello.com/1/boards/{{ExistingBoardId}}/lists?key={{TrelloKey}}&token={{TrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										"{{ExistingBoardId}}",
+										"lists"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{TrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{TrelloToken}}"
+										}
+									]
+								}
 							},
 							"response": []
 						}
