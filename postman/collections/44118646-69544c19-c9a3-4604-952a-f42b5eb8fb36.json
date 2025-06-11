@@ -2555,7 +2555,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{Protocol}}://api.trello.com/1/cards/68449f5325e161c038dd6bb1?key={{TrelloKey}}&token={{TrelloToken}}",
+									"raw": "{{Protocol}}://api.trello.com/1/cards/{{ValidCardId}}?key={{TrelloKey}}&token={{TrelloToken}}",
 									"protocol": "{{Protocol}}",
 									"host": [
 										"api",
@@ -2565,7 +2565,7 @@
 									"path": [
 										"1",
 										"cards",
-										"68449f5325e161c038dd6bb1"
+										"{{ValidCardId}}"
 									],
 									"query": [
 										{
